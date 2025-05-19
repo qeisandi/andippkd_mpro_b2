@@ -13,7 +13,11 @@ class Tugas1 extends StatelessWidget {
       body: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          Icon(Icons.account_circle, color: Colors.deepOrange, size: 90),
+          Icon(
+            Icons.account_circle_outlined,
+            color: Colors.deepOrange,
+            size: 90,
+          ),
           Text('Nama : Andi', style: TextStyle(fontSize: 25)),
           Row(
             mainAxisAlignment: MainAxisAlignment.center,
