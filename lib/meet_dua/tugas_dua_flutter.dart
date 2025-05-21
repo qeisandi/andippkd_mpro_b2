@@ -45,7 +45,7 @@ class MeetDua extends StatelessWidget {
           ),
           Container(
             padding: const EdgeInsets.all(12.0),
-            margin: EdgeInsets.all(20),
+            margin: EdgeInsets.all(10),
             width: double.infinity,
             decoration: BoxDecoration(
               color: const Color.fromARGB(255, 199, 196, 196),
@@ -67,21 +67,33 @@ class MeetDua extends StatelessWidget {
             ),
           ),
           Padding(
-            padding: const EdgeInsets.all(8.0),
-            child: Row(
-              children: [
-                Padding(padding: const EdgeInsets.all(10.0)),
-                Icon(Icons.phone, size: 25, color: Colors.white),
-                Spacer(),
-                Text(
-                  '0857-7789-9924',
-                  style: TextStyle(
-                    fontSize: 15,
-                    fontWeight: FontWeight.bold,
-                    color: Colors.white,
+            padding: const EdgeInsets.all(0),
+            child: Container(
+              padding: const EdgeInsets.all(12.0),
+              margin: EdgeInsets.all(10),
+              width: double.infinity,
+              decoration: BoxDecoration(
+                color: const Color.fromARGB(255, 199, 196, 196),
+                borderRadius: BorderRadius.all(Radius.circular(14)),
+              ),
+              child: Row(
+                children: [
+                  Padding(padding: const EdgeInsets.all(0)),
+                  Icon(
+                    Icons.phone,
+                    size: 25,
+                    color: const Color.fromARGB(255, 0, 0, 0),
                   ),
-                ),
-              ],
+                  Spacer(),
+                  Text(
+                    '0857-7789-9924',
+                    style: TextStyle(
+                      fontSize: 15,
+                      color: const Color.fromARGB(255, 0, 0, 0),
+                    ),
+                  ),
+                ],
+              ),
             ),
           ),
           Row(
