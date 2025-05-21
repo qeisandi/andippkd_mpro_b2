@@ -34,7 +34,7 @@ class MyApp extends StatelessWidget {
           seedColor: const Color.fromARGB(255, 114, 198, 231),
         ),
       ),
-      home: const meetDua(),
+      home: const MeetDua(),
     );
   }
 }
