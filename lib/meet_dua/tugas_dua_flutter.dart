@@ -66,7 +66,6 @@ class MeetDua extends StatelessWidget {
               ],
             ),
           ),
-          Padding(padding: const EdgeInsets.all(10.0)),
           Padding(
             padding: const EdgeInsets.all(8.0),
             child: Row(
@@ -135,10 +134,17 @@ class MeetDua extends StatelessWidget {
               padding: const EdgeInsets.all(12.0),
               child: Column(
                 children: [
-                  Text(
-                    'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum....',
-                    style: TextStyle(fontSize: 15, color: Colors.white),
-                    textAlign: TextAlign.justify,
+                  Container(
+                    padding: const EdgeInsets.all(10.0),
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.all(Radius.circular(15)),
+                      color: Colors.green,
+                    ),
+                    child: Text(
+                      'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages....',
+                      style: TextStyle(fontSize: 15, color: Colors.white),
+                      textAlign: TextAlign.justify,
+                    ),
                   ),
                   Text(
                     'Read more',
