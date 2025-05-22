@@ -223,10 +223,6 @@ class _MeetTigaState extends State<MeetTiga> {
                       color: Colors.black,
                       child: Stack(children: [buildStack()]),
                     ),
-                    Container(
-                      color: Colors.black,
-                      child: Stack(children: [buildStack()]),
-                    ),
                   ],
                 ),
               ),
