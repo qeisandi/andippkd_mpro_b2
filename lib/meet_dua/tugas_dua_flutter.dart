@@ -6,13 +6,9 @@ class MeetDua extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: const Color.fromARGB(255, 41, 56, 68),
       appBar: AppBar(
         title: Center(
-          child: Text(
-            'Profile Lengkap',
-            style: TextStyle(fontWeight: FontWeight.bold),
-          ),
+          child: Text('Profile', style: TextStyle(fontWeight: FontWeight.bold)),
         ),
         backgroundColor: Colors.green,
       ),
@@ -37,7 +33,7 @@ class MeetDua extends StatelessWidget {
                   style: TextStyle(
                     fontSize: 30,
                     fontWeight: FontWeight.bold,
-                    color: Colors.white,
+                    color: const Color.fromARGB(255, 0, 0, 0),
                   ),
                 ),
               ),
