@@ -32,10 +32,10 @@ class _MeetTigaState extends State<MeetTiga> {
           children: [
             Container(
               padding: EdgeInsets.all(12),
-              // margin: EdgeInsets.symmetric(vertical: 50),
+              margin: EdgeInsets.all(12),
               decoration: BoxDecoration(
-                border: Border.all(color: Colors.black),
                 color: Color(0xffF2EFE7),
+                borderRadius: BorderRadius.all(Radius.circular(12)),
               ),
               child: Column(
                 children: [
@@ -65,7 +65,7 @@ class _MeetTigaState extends State<MeetTiga> {
                       ),
                     ),
                   ),
-                  Padding(padding: EdgeInsets.all(12)),
+                  Padding(padding: EdgeInsets.all(5)),
                   Row(
                     children: [
                       Text(
@@ -92,7 +92,7 @@ class _MeetTigaState extends State<MeetTiga> {
                       ),
                     ),
                   ),
-                  Padding(padding: EdgeInsets.all(12)),
+                  Padding(padding: EdgeInsets.all(5)),
                   Row(
                     children: [
                       Text(
@@ -119,7 +119,7 @@ class _MeetTigaState extends State<MeetTiga> {
                       ),
                     ),
                   ),
-                  Padding(padding: EdgeInsets.all(25)),
+                  Padding(padding: EdgeInsets.all(15)),
                   TextField(
                     maxLines: 5,
                     maxLength: 150,
@@ -132,17 +132,33 @@ class _MeetTigaState extends State<MeetTiga> {
                       ),
                     ),
                   ),
+                  Container(
+                    padding: EdgeInsets.symmetric(horizontal: 80, vertical: 15),
+                    margin: EdgeInsets.all(12),
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.all(Radius.circular(24)),
+                      color: Color(0xff096B68),
+                    ),
+                    child: Text(
+                      'Register Now',
+                      style: TextStyle(
+                        color: Colors.white,
+                        fontWeight: FontWeight.bold,
+                      ),
+                    ),
+                  ),
                 ],
               ),
             ),
             SizedBox(height: 5),
             Container(
               padding: EdgeInsets.all(12),
+              margin: EdgeInsets.all(12),
               height: 100,
               width: 500,
               decoration: BoxDecoration(
                 color: Color(0xffF2EFE7),
-                border: Border.all(color: Colors.black),
+                borderRadius: BorderRadius.all(Radius.circular(12)),
               ),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
@@ -168,59 +184,39 @@ class _MeetTigaState extends State<MeetTiga> {
                   crossAxisCount: 3,
                   children: <Widget>[
                     Container(
-                      color: Colors.black,
+                      color: Color(0xff90D1CA),
                       child: Stack(children: [buildStack()]),
                     ),
                     Container(
-                      color: Colors.black,
+                      color: Color(0xff129990),
                       child: Stack(children: [buildStack()]),
                     ),
                     Container(
-                      color: Colors.black,
+                      color: Color(0xff096B68),
                       child: Stack(children: [buildStack()]),
                     ),
                     Container(
-                      color: Colors.black,
+                      color: Color(0xff90D1CA),
                       child: Stack(children: [buildStack()]),
                     ),
                     Container(
-                      color: Colors.black,
+                      color: Color(0xff129990),
                       child: Stack(children: [buildStack()]),
                     ),
                     Container(
-                      color: Colors.black,
+                      color: Color(0xff096B68),
                       child: Stack(children: [buildStack()]),
                     ),
                     Container(
-                      color: Colors.black,
+                      color: Color(0xff90D1CA),
                       child: Stack(children: [buildStack()]),
                     ),
                     Container(
-                      color: Colors.black,
+                      color: Color(0xff129990),
                       child: Stack(children: [buildStack()]),
                     ),
                     Container(
-                      color: Colors.black,
-                      child: Stack(children: [buildStack()]),
-                    ),
-                    Container(
-                      color: Colors.black,
-                      child: Stack(children: [buildStack()]),
-                    ),
-                    Container(
-                      color: Colors.black,
-                      child: Stack(children: [buildStack()]),
-                    ),
-                    Container(
-                      color: Colors.black,
-                      child: Stack(children: [buildStack()]),
-                    ),
-                    Container(
-                      color: Colors.black,
-                      child: Stack(children: [buildStack()]),
-                    ),
-                    Container(
-                      color: Colors.black,
+                      color: Color(0xff096B68),
                       child: Stack(children: [buildStack()]),
                     ),
                   ],

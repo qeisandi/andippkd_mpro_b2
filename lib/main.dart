@@ -1,4 +1,4 @@
-import 'package:andippkd_mpro_b2/meet_empat/tugas_empat_flutter.dart';
+import 'package:andippkd_mpro_b2/meet_tiga/tugas_tiga_flutter.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -34,7 +34,7 @@ class MyApp extends StatelessWidget {
           seedColor: const Color.fromARGB(255, 114, 198, 231),
         ),
       ),
-      home: const MeetEmpat(),
+      home: const MeetTiga(),
     );
   }
 }
