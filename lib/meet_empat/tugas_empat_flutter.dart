@@ -30,10 +30,11 @@ class _MeetEmpatState extends State<MeetEmpat> {
         children: [
           Container(
             padding: EdgeInsets.all(12),
+            margin: EdgeInsets.all(12),
             // margin: EdgeInsets.symmetric(vertical: 50),
             decoration: BoxDecoration(
-              border: Border.all(color: Colors.black),
               color: Color(0xffDFD0B8),
+              borderRadius: BorderRadius.all(Radius.circular(12)),
             ),
             child: Column(
               children: [
@@ -69,7 +70,7 @@ class _MeetEmpatState extends State<MeetEmpat> {
                     ),
                   ),
                 ),
-                Padding(padding: EdgeInsets.all(12)),
+                Padding(padding: EdgeInsets.all(5)),
                 Row(
                   children: [
                     Text(
@@ -99,7 +100,7 @@ class _MeetEmpatState extends State<MeetEmpat> {
                     ),
                   ),
                 ),
-                Padding(padding: EdgeInsets.all(12)),
+                Padding(padding: EdgeInsets.all(5)),
                 Row(
                   children: [
                     Text(
@@ -132,9 +133,9 @@ class _MeetEmpatState extends State<MeetEmpat> {
                     ),
                   ),
                 ),
-                Padding(padding: EdgeInsets.all(25)),
+                Padding(padding: EdgeInsets.all(12)),
                 TextField(
-                  maxLines: 5,
+                  maxLines: 3,
                   maxLength: 150,
                   decoration: InputDecoration(
                     hintText: 'Description',
@@ -142,6 +143,21 @@ class _MeetEmpatState extends State<MeetEmpat> {
                     fillColor: Colors.white,
                     border: OutlineInputBorder(
                       borderRadius: BorderRadius.circular(12),
+                    ),
+                  ),
+                ),
+                Container(
+                  padding: EdgeInsets.symmetric(horizontal: 80, vertical: 15),
+                  margin: EdgeInsets.all(12),
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.all(Radius.circular(24)),
+                    color: Color(0xff393E46),
+                  ),
+                  child: Text(
+                    'Register Now',
+                    style: TextStyle(
+                      color: Colors.white,
+                      fontWeight: FontWeight.bold,
                     ),
                   ),
                 ),
@@ -157,7 +173,7 @@ class _MeetEmpatState extends State<MeetEmpat> {
               width: 500,
               decoration: BoxDecoration(
                 color: Color(0xffDFD0B8),
-                border: Border.all(color: Colors.black),
+                borderRadius: BorderRadius.all(Radius.circular(12)),
               ),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
@@ -179,7 +195,7 @@ class _MeetEmpatState extends State<MeetEmpat> {
                 Row(
                   children: [
                     Text(
-                      'Samsung',
+                      'Shopping cart',
                       style: TextStyle(
                         fontSize: 20,
                         fontWeight: FontWeight.bold,
@@ -189,7 +205,7 @@ class _MeetEmpatState extends State<MeetEmpat> {
                 ),
                 Card(
                   child: ListTile(
-                    trailing: Icon(Icons.add_shopping_cart),
+                    trailing: Icon(Icons.add),
                     leading: Image.asset('assets/image/samsung1.jpg'),
                     title: Text(
                       'Samsung A15 5G',
@@ -200,7 +216,7 @@ class _MeetEmpatState extends State<MeetEmpat> {
                 ),
                 Card(
                   child: ListTile(
-                    trailing: Icon(Icons.add_shopping_cart),
+                    trailing: Icon(Icons.add),
                     leading: Image.asset('assets/image/samsung2.jpg'),
                     title: Text(
                       'Galaxy S24 Ultra',
@@ -211,7 +227,7 @@ class _MeetEmpatState extends State<MeetEmpat> {
                 ),
                 Card(
                   child: ListTile(
-                    trailing: Icon(Icons.add_shopping_cart),
+                    trailing: Icon(Icons.add),
                     leading: Image.asset('assets/image/samsung3.jpg'),
                     title: Text(
                       'Galaxy S22',
@@ -222,7 +238,7 @@ class _MeetEmpatState extends State<MeetEmpat> {
                 ),
                 Card(
                   child: ListTile(
-                    trailing: Icon(Icons.add_shopping_cart),
+                    trailing: Icon(Icons.add),
                     leading: Image.asset('assets/image/samsung4.jpg'),
                     title: Text(
                       'S21 Ultra',
@@ -233,7 +249,7 @@ class _MeetEmpatState extends State<MeetEmpat> {
                 ),
                 Card(
                   child: ListTile(
-                    trailing: Icon(Icons.add_shopping_cart),
+                    trailing: Icon(Icons.add),
                     leading: Image.asset('assets/image/samsung5.jpg'),
                     title: Text(
                       'S24 Ultra',
