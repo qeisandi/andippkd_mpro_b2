@@ -55,7 +55,7 @@ class _MeetLimaState extends State<MeetLima> {
                 icon: Icon(Icons.favorite, color: Colors.red, Colors.grey),
                 onPressed: () {
                   setState(() {
-                    _ikonFav = !_ikonFav;
+                    _ikonFav = !_ikonFav
                   });
                 },
               ),
