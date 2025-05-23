@@ -204,6 +204,7 @@ class _MeetEmpatState extends State<MeetEmpat> {
                   ],
                 ),
                 Card(
+                  elevation: 4,
                   child: ListTile(
                     trailing: Icon(Icons.add),
                     leading: Image.asset('assets/image/samsung1.jpg'),
@@ -215,6 +216,7 @@ class _MeetEmpatState extends State<MeetEmpat> {
                   ),
                 ),
                 Card(
+                  elevation: 4,
                   child: ListTile(
                     trailing: Icon(Icons.add),
                     leading: Image.asset('assets/image/samsung2.jpg'),
@@ -226,6 +228,7 @@ class _MeetEmpatState extends State<MeetEmpat> {
                   ),
                 ),
                 Card(
+                  elevation: 4,
                   child: ListTile(
                     trailing: Icon(Icons.add),
                     leading: Image.asset('assets/image/samsung3.jpg'),
@@ -237,6 +240,7 @@ class _MeetEmpatState extends State<MeetEmpat> {
                   ),
                 ),
                 Card(
+                  elevation: 4,
                   child: ListTile(
                     trailing: Icon(Icons.add),
                     leading: Image.asset('assets/image/samsung4.jpg'),
@@ -248,6 +252,7 @@ class _MeetEmpatState extends State<MeetEmpat> {
                   ),
                 ),
                 Card(
+                  elevation: 4,
                   child: ListTile(
                     trailing: Icon(Icons.add),
                     leading: Image.asset('assets/image/samsung5.jpg'),
