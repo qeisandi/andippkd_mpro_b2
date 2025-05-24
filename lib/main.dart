@@ -1,4 +1,4 @@
-import 'package:andippkd_mpro_b2/meet_lima/tugas_lima_flutter.dart';
+import 'package:andippkd_mpro_b2/meet_enam/tugas_enam_flutter.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -34,7 +34,7 @@ class MyApp extends StatelessWidget {
           seedColor: const Color.fromARGB(255, 114, 198, 231),
         ),
       ),
-      home: const MeetLima(),
+      home: const MeetEnam(),
     );
   }
 }
