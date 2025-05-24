@@ -203,64 +203,83 @@ class _MeetEmpatState extends State<MeetEmpat> {
                     ),
                   ],
                 ),
-                Card(
-                  elevation: 4,
-                  child: ListTile(
-                    trailing: Icon(Icons.add),
-                    leading: Image.asset('assets/image/samsung1.jpg'),
-                    title: Text(
-                      'Samsung A15 5G',
-                      style: TextStyle(fontWeight: FontWeight.w500),
-                    ),
-                    subtitle: Text('Rp3.599.000'),
-                  ),
-                ),
-                Card(
-                  elevation: 4,
-                  child: ListTile(
-                    trailing: Icon(Icons.add),
-                    leading: Image.asset('assets/image/samsung2.jpg'),
-                    title: Text(
-                      'Galaxy S24 Ultra',
-                      style: TextStyle(fontWeight: FontWeight.w500),
-                    ),
-                    subtitle: Text('Rp19.599.000'),
-                  ),
-                ),
-                Card(
-                  elevation: 4,
-                  child: ListTile(
-                    trailing: Icon(Icons.add),
-                    leading: Image.asset('assets/image/samsung3.jpg'),
-                    title: Text(
-                      'Galaxy S22',
-                      style: TextStyle(fontWeight: FontWeight.w500),
-                    ),
-                    subtitle: Text('Rp6.879.000'),
-                  ),
-                ),
-                Card(
-                  elevation: 4,
-                  child: ListTile(
-                    trailing: Icon(Icons.add),
-                    leading: Image.asset('assets/image/samsung4.jpg'),
-                    title: Text(
-                      'S21 Ultra',
-                      style: TextStyle(fontWeight: FontWeight.w500),
-                    ),
-                    subtitle: Text('Rp14.738.500'),
-                  ),
-                ),
-                Card(
-                  elevation: 4,
-                  child: ListTile(
-                    trailing: Icon(Icons.add),
-                    leading: Image.asset('assets/image/samsung5.jpg'),
-                    title: Text(
-                      'S24 Ultra',
-                      style: TextStyle(fontWeight: FontWeight.w500),
-                    ),
-                    subtitle: Text('Rp 19.499.000'),
+                SingleChildScrollView(
+                  physics: BouncingScrollPhysics(),
+                  child: Column(
+                    children: [
+                      Card(
+                        elevation: 4,
+                        child: ListTile(
+                          trailing: Icon(Icons.add),
+                          leading: Image.asset('assets/image/samsung1.jpg'),
+                          title: Text(
+                            'Samsung A15 5G',
+                            style: TextStyle(fontWeight: FontWeight.w500),
+                          ),
+                          subtitle: Text('Rp3.599.000'),
+                        ),
+                      ),
+                      Card(
+                        elevation: 4,
+                        child: ListTile(
+                          trailing: Icon(Icons.add),
+                          leading: Image.asset('assets/image/samsung2.jpg'),
+                          title: Text(
+                            'Galaxy S24 Ultra',
+                            style: TextStyle(fontWeight: FontWeight.w500),
+                          ),
+                          subtitle: Text('Rp19.599.000'),
+                        ),
+                      ),
+                      Card(
+                        elevation: 4,
+                        child: ListTile(
+                          trailing: Icon(Icons.add),
+                          leading: Image.asset('assets/image/samsung3.jpg'),
+                          title: Text(
+                            'Galaxy S22',
+                            style: TextStyle(fontWeight: FontWeight.w500),
+                          ),
+                          subtitle: Text('Rp6.879.000'),
+                        ),
+                      ),
+                      Card(
+                        elevation: 4,
+                        child: ListTile(
+                          trailing: Icon(Icons.add),
+                          leading: Image.asset('assets/image/samsung4.jpg'),
+                          title: Text(
+                            'S21 Ultra',
+                            style: TextStyle(fontWeight: FontWeight.w500),
+                          ),
+                          subtitle: Text('Rp14.738.500'),
+                        ),
+                      ),
+                      Card(
+                        elevation: 4,
+                        child: ListTile(
+                          trailing: Icon(Icons.add),
+                          leading: Image.asset('assets/image/samsung5.jpg'),
+                          title: Text(
+                            'S24 Ultra',
+                            style: TextStyle(fontWeight: FontWeight.w500),
+                          ),
+                          subtitle: Text('Rp 19.499.000'),
+                        ),
+                      ),
+                      Card(
+                        elevation: 4,
+                        child: ListTile(
+                          trailing: Icon(Icons.add),
+                          leading: Image.asset('assets/image/samsung1.jpg'),
+                          title: Text(
+                            'Samsung A15 5G',
+                            style: TextStyle(fontWeight: FontWeight.w500),
+                          ),
+                          subtitle: Text('Rp3.599.000'),
+                        ),
+                      ),
+                    ],
                   ),
                 ),
               ],
