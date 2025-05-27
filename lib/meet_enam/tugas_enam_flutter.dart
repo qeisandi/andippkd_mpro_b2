@@ -1,3 +1,4 @@
+import 'package:andippkd_mpro_b2/meet_tiga/tugas_tiga_flutter.dart';
 import 'package:flutter/material.dart';
 
 class MeetEnam extends StatefulWidget {
@@ -18,11 +19,10 @@ class _MeetEnamState extends State<MeetEnam> {
       resizeToAvoidBottomInset: false,
       appBar: AppBar(
         leading: IconButton(
-          onPressed: () {},
-          icon: IconButton(
-            onPressed: () {},
-            icon: Icon(Icons.keyboard_arrow_left_sharp),
-          ),
+          onPressed: () {
+            Navigator.pop(context);
+          },
+          icon: Icon(Icons.keyboard_arrow_left_sharp),
         ),
         title: Text('Login', style: TextStyle(fontFamily: 'Gilroy')),
       ),
@@ -134,6 +134,12 @@ class _MeetEnamState extends State<MeetEnam> {
                         onPressed: () {
                           print(
                             'LOGIN DENGAN : EMAIL (${emailC.text}) & PASS (${passC.text})',
+                          );
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: (context) => const MeetTiga(),
+                            ),
                           );
                         },
                         style: ElevatedButton.styleFrom(
