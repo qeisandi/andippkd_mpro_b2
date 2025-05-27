@@ -1,4 +1,8 @@
-import 'package:andippkd_mpro_b2/meet_enam/tugas_enam_flutter.dart';
+// import 'package:andippkd_mpro_b2/meet_enam/tugas_enam_flutter.dart';
+// import 'package:andippkd_mpro_b2/input_widget/input_widget.dart';
+import 'package:andippkd_mpro_b2/meet_tujuh/tugas_tujuh_flutter.dart';
+// import 'package:andippkd_mpro_b2/splash_screen/splash.dart';
+// import 'package:andippkd_mpro_b2/splash_screen/splash.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -34,7 +38,7 @@ class MyApp extends StatelessWidget {
           seedColor: const Color.fromARGB(255, 114, 198, 231),
         ),
       ),
-      home: const MeetEnam(),
+      home: const MeetTujuh(),
     );
   }
 }

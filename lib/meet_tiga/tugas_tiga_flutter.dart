@@ -15,6 +15,15 @@ class _MeetTigaState extends State<MeetTiga> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        leading: IconButton(
+          onPressed: () {},
+          icon: IconButton(
+            onPressed: () {
+              Navigator.pop(context);
+            },
+            icon: Icon(Icons.keyboard_arrow_left_sharp),
+          ),
+        ),
         backgroundColor: Color(0xff006A71),
         title: Text(
           'Register',
