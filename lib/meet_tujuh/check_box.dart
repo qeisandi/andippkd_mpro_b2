@@ -75,7 +75,7 @@ class _CheckBoxAState extends State<CheckBoxA> {
                           onChanged: (value) {
                             setState(() {
                               print("Checkbox value changed: $value");
-                              _valueCheck = value ?? false;
+                              _valueCheck = value!;
                             });
                           },
                         ),
@@ -83,51 +83,29 @@ class _CheckBoxAState extends State<CheckBoxA> {
                         Row(
                           children: [
                             Padding(
-                              padding: EdgeInsets.symmetric(horizontal: 12),
+                              padding: EdgeInsets.symmetric(horizontal: 20),
                             ),
-                            Text(
-                              _valueCheck
-                                  ? "Lanjutkan pendaftaran diperbolehkan"
-                                  : "Anda belum bisa melanjutkan",
-                              style: TextStyle(fontSize: 15),
+                            ElevatedButton(
+                              onPressed: _valueCheck ? () {} : null,
+                              child: Text(
+                                _valueCheck
+                                    ? "Lanjutkan pendaftaran diperbolehkan"
+                                    : "Anda belum bisa melanjutkan",
+                                style: TextStyle(fontSize: 15),
+                              ),
                             ),
+                            // Text(
+                            //   _valueCheck
+                            //       ? "Lanjutkan pendaftaran diperbolehkan"
+                            //       : "Anda belum bisa melanjutkan",
+                            //   style: TextStyle(fontSize: 15),
+                            // ),
                           ],
                         ),
                       ],
                     ),
                   ),
                 ),
-                // CheckboxListTile(
-                //   title: Text(
-                //     'Saya menyetujui semua persyaratan yang berlaku',
-                //     style: TextStyle(fontFamily: 'Gilroy', fontSize: 16),
-                //   ),
-                //   controlAffinity: ListTileControlAffinity.leading,
-                //   // fillColor: WidgetStateProperty.all(AppColor.army1),
-                //   activeColor: Colors.green,
-                //   checkColor: Colors.white,
-                //   shape: BeveledRectangleBorder(),
-                //   side: BorderSide(color: Colors.grey),
-                //   value: _valueCheck,
-                //   onChanged: (value) {
-                //     setState(() {
-                //       print("Checkbox value changed: $value");
-                //       _valueCheck = value ?? false;
-                //     });
-                //   },
-                // ),
-                // // SizedBox(height: 20),
-                // Row(
-                //   children: [
-                //     Padding(padding: EdgeInsets.symmetric(horizontal: 12)),
-                //     Text(
-                //       _valueCheck
-                //           ? "Lanjutkan pendaftaran diperbolehkan"
-                //           : "Anda belum bisa melanjutkan",
-                //       style: TextStyle(fontSize: 15),
-                //     ),
-                //   ],
-                // ),
               ],
             ),
           ],

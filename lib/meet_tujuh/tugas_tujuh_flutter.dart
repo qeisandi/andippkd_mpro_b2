@@ -1,4 +1,8 @@
 // import 'package:andippkd_mpro_b2/meet_enam/tugas_enam_flutter.dart';
+// import 'package:andippkd_mpro_b2/meet_dua/tugas_dua_flutter.dart';
+import 'package:andippkd_mpro_b2/meet_sembilan/tugas_sembilan_b.dart';
+import 'package:andippkd_mpro_b2/meet_sembilan/tugas_sembilan_c.dart';
+import 'package:andippkd_mpro_b2/meet_sembilan/tugas_sembilan_flutter.dart';
 import 'package:andippkd_mpro_b2/meet_tujuh/alarm.dart';
 import 'package:andippkd_mpro_b2/meet_tujuh/check_box.dart';
 import 'package:andippkd_mpro_b2/meet_tujuh/date.dart';
@@ -21,6 +25,9 @@ class _MeetTujuhState extends State<MeetTujuh> {
     TujuhD(),
     TujuhC(),
     TujuhE(),
+    MeetSembilanA(),
+    MeetSembilanB(),
+    MeetSembilanC(),
   ];
   //  bool _valueCheck = false;
   int _selectedIndex = 0;
@@ -28,14 +35,19 @@ class _MeetTujuhState extends State<MeetTujuh> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        backgroundColor: Colors.blueGrey,
         title: Column(
           // mainAxisAlignment: MainAxisAlignment.center,
           children: [
             // Padding(padding: EdgeInsets.symmetric(horizontal: 20)),
             // Center(
             Text(
-              'Tugas Tujuh',
-              style: TextStyle(fontFamily: 'Gilroy', fontSize: 32),
+              'Home',
+              style: TextStyle(
+                fontFamily: 'Gilroy',
+                fontSize: 32,
+                color: Colors.white,
+              ),
             ),
             // ),
           ],
@@ -72,6 +84,7 @@ class _MeetTujuhState extends State<MeetTujuh> {
             ListTile(
               leading: Icon(Icons.check_circle_outline_outlined),
               title: Text('Syarat & Ketentuan'),
+              subtitle: Text('Chekbox'),
               onTap: () {
                 setState(() {
                   _selectedIndex = 0;
@@ -82,6 +95,7 @@ class _MeetTujuhState extends State<MeetTujuh> {
             ListTile(
               leading: Icon(Icons.dark_mode_outlined),
               title: Text('Mode Gelap'),
+              subtitle: Text('Switch'),
               onTap: () {
                 setState(() {
                   _selectedIndex = 1;
@@ -92,6 +106,7 @@ class _MeetTujuhState extends State<MeetTujuh> {
             ListTile(
               leading: Icon(Icons.calendar_month_rounded),
               title: Text('Pilih Tanggal Lahir'),
+              subtitle: Text('Tanggal'),
               onTap: () {
                 setState(() {
                   _selectedIndex = 2;
@@ -102,6 +117,7 @@ class _MeetTujuhState extends State<MeetTujuh> {
             ListTile(
               leading: Icon(Icons.list_alt_rounded),
               title: Text('Pilih Kategori Produk'),
+              subtitle: Text('Product baru'),
               onTap: () {
                 setState(() {
                   _selectedIndex = 3;
@@ -112,9 +128,43 @@ class _MeetTujuhState extends State<MeetTujuh> {
             ListTile(
               leading: Icon(Icons.access_time_filled_rounded),
               title: Text('Atur Pengingat'),
+              subtitle: Text('Jangan lupa pasang alarm'),
               onTap: () {
                 setState(() {
                   _selectedIndex = 4;
+                });
+                Navigator.pop(context);
+              },
+            ),
+            ListTile(
+              leading: Icon(Icons.list),
+              title: Text('list and map A'),
+              subtitle: Text('Tugas 9A'),
+              onTap: () {
+                setState(() {
+                  _selectedIndex = 5;
+                });
+                Navigator.pop(context);
+              },
+            ),
+            ListTile(
+              leading: Icon(Icons.list_alt),
+              title: Text('list and map B'),
+              subtitle: Text('Tugas 9B'),
+              onTap: () {
+                setState(() {
+                  _selectedIndex = 6;
+                });
+                Navigator.pop(context);
+              },
+            ),
+            ListTile(
+              leading: Icon(Icons.shop),
+              title: Text('Product'),
+              subtitle: Text('Tugas 9C'),
+              onTap: () {
+                setState(() {
+                  _selectedIndex = 7;
                 });
                 Navigator.pop(context);
               },
