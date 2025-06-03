@@ -1,4 +1,3 @@
-import 'package:andippkd_mpro_b2/meet_tiga/tugas_tiga_flutter.dart';
 import 'package:flutter/material.dart';
 
 class MeetEnam extends StatefulWidget {
@@ -13,6 +12,8 @@ class _MeetEnamState extends State<MeetEnam> {
   bool _ikonHide = false;
   TextEditingController emailC = TextEditingController();
   TextEditingController passC = TextEditingController();
+  final _fromKey = GlobalKey<FormState>();
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -27,6 +28,7 @@ class _MeetEnamState extends State<MeetEnam> {
         title: Text('Login', style: TextStyle(fontFamily: 'Gilroy')),
       ),
       body: Padding(
+        key: _fromKey,
         padding: const EdgeInsets.symmetric(horizontal: 28),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
@@ -42,7 +44,7 @@ class _MeetEnamState extends State<MeetEnam> {
               style: TextStyle(fontSize: 14, color: Color(0xff888888)),
             ),
             SizedBox(height: 28),
-            Expanded(
+            Form(
               child: Column(
                 children: [
                   Row(
@@ -57,7 +59,7 @@ class _MeetEnamState extends State<MeetEnam> {
                     ],
                   ),
                   SizedBox(height: 16),
-                  TextField(
+                  TextFormField(
                     controller: emailC,
                     textInputAction: TextInputAction.next,
                     decoration: InputDecoration(
@@ -67,6 +69,14 @@ class _MeetEnamState extends State<MeetEnam> {
                         borderRadius: BorderRadius.circular(40),
                       ),
                     ),
+                    validator: (value) {
+                      if (value == null || value.isEmpty) {
+                        return "Email tidak boleh kosong";
+                      } else if (!value.contains("@")) {
+                        return "Email tidak valid";
+                      }
+                      return null;
+                    },
                   ),
                   SizedBox(height: 20),
                   Row(
@@ -81,7 +91,7 @@ class _MeetEnamState extends State<MeetEnam> {
                     ],
                   ),
                   SizedBox(height: 16),
-                  TextField(
+                  TextFormField(
                     controller: passC,
                     textInputAction: TextInputAction.done,
                     obscureText: _hidden,
@@ -107,6 +117,14 @@ class _MeetEnamState extends State<MeetEnam> {
                                 : Icon(Icons.visibility_off_outlined),
                       ),
                     ),
+                    validator: (value) {
+                      if (value == null || value.isEmpty) {
+                        return "password must be fill";
+                      } else if (value.length < 10) {
+                        return "Password not valid";
+                      }
+                      return null;
+                    },
                   ),
                   // SizedBox(height: 16),
                   Column(
@@ -132,15 +150,19 @@ class _MeetEnamState extends State<MeetEnam> {
                       SizedBox(height: 16),
                       ElevatedButton(
                         onPressed: () {
-                          print(
-                            'LOGIN DENGAN : EMAIL (${emailC.text}) & PASS (${passC.text})',
-                          );
-                          Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                              builder: (context) => const MeetTiga(),
-                            ),
-                          );
+                          if (_fromKey.currentState!.validate()) {
+                            print('Berhasil');
+                            // dialogSuccess(context);
+                          }
+                          // print(
+                          //   'LOGIN DENGAN : EMAIL (${emailC.text}) & PASS (${passC.text})',
+                          // );
+                          // Navigator.push(
+                          //   context,
+                          //   MaterialPageRoute(
+                          //     builder: (context) => const MeetTiga(),
+                          //   ),
+                          // );
                         },
                         style: ElevatedButton.styleFrom(
                           backgroundColor: Color(0xff283FB1),

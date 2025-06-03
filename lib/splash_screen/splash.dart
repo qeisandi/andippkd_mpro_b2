@@ -2,6 +2,7 @@ import 'package:andippkd_mpro_b2/meet_enam/tugas_enam_flutter.dart';
 import 'package:flutter/material.dart';
 
 class Splash extends StatefulWidget {
+  static const String id = "/Splash";
   const Splash({super.key});
 
   @override
