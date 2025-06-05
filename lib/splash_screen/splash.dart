@@ -1,4 +1,5 @@
-import 'package:andippkd_mpro_b2/meet_enam/tugas_enam_flutter.dart';
+import 'package:andippkd_mpro_b2/meet_sebelas/login_screen.dart';
+import 'package:andippkd_mpro_b2/meet_sebelas/register_screen.dart';
 import 'package:flutter/material.dart';
 
 class Splash extends StatefulWidget {
@@ -23,7 +24,7 @@ class _SplashState extends State<Splash> {
         //   ),
         // ),
         title: Center(
-          child: Text('SetApps', style: TextStyle(fontFamily: 'Gilroy')),
+          child: Text('Flutter Apps', style: TextStyle(fontFamily: 'Gilroy')),
         ),
       ),
       body: Padding(
@@ -95,7 +96,7 @@ class _SplashState extends State<Splash> {
               onPressed: () {
                 Navigator.push(
                   context,
-                  MaterialPageRoute(builder: (context) => const MeetEnam()),
+                  MaterialPageRoute(builder: (context) => const LoginScreen()),
                 );
               },
               style: ElevatedButton.styleFrom(
@@ -118,7 +119,9 @@ class _SplashState extends State<Splash> {
                   ),
                 ),
                 TextButton(
-                  onPressed: () {},
+                  onPressed: () {
+                    Navigator.pushNamed(context, RegisterScreen.id);
+                  },
                   child: Text(
                     "Sign Up",
                     style: TextStyle(
