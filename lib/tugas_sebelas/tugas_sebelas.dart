@@ -97,7 +97,8 @@ class _MeetSebelasState extends State<MeetSebelas> {
                 decoration: InputDecoration(
                   fillColor: Color(0xffF5ECD5),
                   filled: true,
-                  labelText: 'Nama product',
+                  hintStyle: TextStyle(fontStyle: FontStyle.italic),
+                  hintText: 'Nama product',
                   border: OutlineInputBorder(
                     borderRadius: BorderRadius.circular(24),
                   ),
@@ -117,7 +118,8 @@ class _MeetSebelasState extends State<MeetSebelas> {
                 decoration: InputDecoration(
                   fillColor: Color(0xffF5ECD5),
                   filled: true,
-                  labelText: 'kategori belanjaan',
+                  hintStyle: TextStyle(fontStyle: FontStyle.italic),
+                  hintText: 'kategori belanjaan',
                   border: OutlineInputBorder(
                     borderRadius: BorderRadius.circular(24),
                   ),
@@ -137,7 +139,8 @@ class _MeetSebelasState extends State<MeetSebelas> {
                 decoration: InputDecoration(
                   fillColor: Color(0xffF5ECD5),
                   filled: true,
-                  labelText: 'Price list',
+                  hintStyle: TextStyle(fontStyle: FontStyle.italic),
+                  hintText: 'Price list',
                   border: OutlineInputBorder(
                     borderRadius: BorderRadius.circular(24),
                   ),
@@ -157,7 +160,8 @@ class _MeetSebelasState extends State<MeetSebelas> {
                 decoration: InputDecoration(
                   fillColor: Color(0xffF5ECD5),
                   filled: true,
-                  labelText: 'Estimasi barang',
+                  hintText: 'Estimasi barang',
+                  hintStyle: TextStyle(fontStyle: FontStyle.italic),
                   border: OutlineInputBorder(
                     borderRadius: BorderRadius.circular(24),
                   ),

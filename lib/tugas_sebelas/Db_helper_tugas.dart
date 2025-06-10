@@ -31,4 +31,26 @@ class DbHelperTugas {
 
     return List.generate(maps.length, (i) => Belanjaan.fromMap(maps[i]));
   }
+
+  static Future<void> deleteBelanjaan(int id) async {
+    final db = await DbHelperTugas.db();
+    await db.delete('belanjaan', where: 'id = ?', whereArgs: [id]);
+
+    final count = Sqflite.firstIntValue(
+      await db.rawQuery('SELECT COUNT (*) FROM belanjaan'),
+    );
+    if (count == 0) {
+      await db.execute("DELETE FROM sqlite_sequence WHERE name ='belanjaan'");
+    }
+  }
+
+  static Future<void> updateBelanjaan(Belanjaan belanjaan) async {
+    final db = await DbHelperTugas.db();
+    await db.update(
+      'belanjaan',
+      belanjaan.toMap(),
+      where: 'id = ?',
+      whereArgs: [belanjaan.id],
+    );
+  }
 }
