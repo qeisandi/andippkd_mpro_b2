@@ -152,17 +152,7 @@ class _MeetEnamState extends State<MeetEnam> {
                         onPressed: () {
                           if (_fromKey.currentState!.validate()) {
                             print('Berhasil');
-                            // dialogSuccess(context);
                           }
-                          // print(
-                          //   'LOGIN DENGAN : EMAIL (${emailC.text}) & PASS (${passC.text})',
-                          // );
-                          // Navigator.push(
-                          //   context,
-                          //   MaterialPageRoute(
-                          //     builder: (context) => const MeetTiga(),
-                          //   ),
-                          // );
                         },
                         style: ElevatedButton.styleFrom(
                           backgroundColor: Color(0xff283FB1),
