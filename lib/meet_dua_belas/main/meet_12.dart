@@ -1,4 +1,5 @@
 import 'package:andippkd_mpro_b2/meet_dua_belas/API/api_flutter_2.dart';
+import 'package:andippkd_mpro_b2/meet_dua_belas/main/detail.dart';
 import 'package:flutter/material.dart';
 
 class TugasDuaBelas extends StatefulWidget {
@@ -12,19 +13,7 @@ class _TugasDuaBelasState extends State<TugasDuaBelas> {
   final TextEditingController _searchC = TextEditingController();
   List<dynamic> allData = [];
   List<dynamic> filteredData = [];
-  @override
-  void initState() {
-    super.initState();
-    fetchAnime();
-  }
-
-  void fetchAnime() async {
-    final data = await ambilUsers();
-    setState(() {
-      allData = data;
-      filteredData = data;
-    });
-  }
+  bool isDataInitialized = false;
 
   void filterAnime(String query) {
     final result =
@@ -40,35 +29,47 @@ class _TugasDuaBelasState extends State<TugasDuaBelas> {
     });
   }
 
+  void resetSearch() {
+    _searchC.clear();
+    setState(() {
+      filteredData = allData;
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Color(0xff433D8B),
+      backgroundColor: const Color(0xff433D8B),
       appBar: AppBar(
         title: const Text(
           'Wibu Bau',
           style: TextStyle(color: Colors.white, fontFamily: 'Gilroy'),
         ),
         centerTitle: true,
-        backgroundColor: Color(0xff17153B),
+        backgroundColor: const Color(0xff17153B),
         elevation: 30,
       ),
       body: Column(
         children: [
-          SizedBox(height: 12),
+          const SizedBox(height: 12),
           Padding(
             padding: const EdgeInsets.all(8.0),
             child: TextFormField(
               controller: _searchC,
               onChanged: filterAnime,
               decoration: InputDecoration(
+                fillColor: Colors.white,
+                filled: true,
                 hintText: 'Cari Anime',
-                hintStyle: TextStyle(color: Colors.grey),
+                hintStyle: const TextStyle(color: Colors.grey),
                 border: OutlineInputBorder(
                   borderRadius: BorderRadius.circular(40),
                 ),
-                prefixIcon: Icon(Icons.search),
-                prefixIconColor: Colors.white,
+                prefixIcon: const Icon(Icons.search, color: Colors.black),
+                suffixIcon: IconButton(
+                  icon: const Icon(Icons.refresh, color: Colors.black),
+                  onPressed: resetSearch,
+                ),
               ),
             ),
           ),
@@ -81,92 +82,111 @@ class _TugasDuaBelasState extends State<TugasDuaBelas> {
                 } else if (snapshot.hasError) {
                   return Center(child: Text("Error: ${snapshot.error}"));
                 } else if (snapshot.hasData) {
-                  final filtrerdData = snapshot.data;
-                  if (filtrerdData == null || filtrerdData.isEmpty) {
-                    return const Center(child: Text("No data found."));
+                  if (!isDataInitialized) {
+                    allData = snapshot.data!;
+                    filteredData = allData;
+                    isDataInitialized = true;
                   }
-                  return GridView.builder(
-                    padding: const EdgeInsets.all(10),
-                    gridDelegate:
-                        const SliverGridDelegateWithFixedCrossAxisCount(
-                          crossAxisCount: 2,
-                          crossAxisSpacing: 10,
-                          mainAxisSpacing: 10,
-                          childAspectRatio: 0.7,
-                        ),
-                    itemCount: filtrerdData.length,
+
+                  if (filteredData.isEmpty) {
+                    return const Center(
+                      child: Text(
+                        "Anime Tidak Ditemukan.",
+                        style: TextStyle(color: Colors.white),
+                      ),
+                    );
+                  }
+
+                  return ListView.builder(
+                    padding: const EdgeInsets.all(12),
+                    itemCount: filteredData.length,
                     itemBuilder: (context, index) {
-                      final anime = filtrerdData[index];
-                      return Card(
-                        color: Color(0xff17153B),
-                        elevation: 5,
-                        shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(12),
-                        ),
-                        child: Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                            Image.network(
-                              anime.images?["jpg"]?.imageUrl ?? "",
-                              height: 150,
-                              width: double.infinity,
-                              fit: BoxFit.cover,
-                              errorBuilder: (context, error, stackTrace) {
-                                return const Icon(
-                                  Icons.broken_image,
-                                  size: 100,
-                                );
-                              },
+                      final anime = filteredData[index];
+                      return InkWell(
+                        onTap: () {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder:
+                                  (context) => DetailAnimePage(anime: anime),
                             ),
-                            Padding(
-                              padding: const EdgeInsets.all(8.0),
-                              child: Text(
-                                anime.title ?? 'No Title',
-                                style: const TextStyle(
-                                  fontWeight: FontWeight.bold,
-                                  fontSize: 14,
-                                  color: Colors.white,
-                                ),
-                                maxLines: 2,
-                                overflow: TextOverflow.ellipsis,
+                          );
+                        },
+                        child: Card(
+                          color: Color(0xff17153B),
+                          elevation: 5,
+                          shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(12),
+                          ),
+                          margin: EdgeInsets.only(bottom: 10),
+                          child: Row(
+                            children: [
+                              Image.network(
+                                anime.images?["jpg"]?.imageUrl ?? "",
+                                height: 120,
+                                width: 90,
+                                fit: BoxFit.cover,
+                                errorBuilder: (context, error, stackTrace) {
+                                  return SizedBox(
+                                    height: 120,
+                                    width: 90,
+                                    child: Icon(Icons.broken_image, size: 40),
+                                  );
+                                },
                               ),
-                            ),
-                            Padding(
-                              padding: const EdgeInsets.symmetric(
-                                horizontal: 8.0,
-                              ),
-                              child: Text(
-                                anime.titleEnglish ?? '',
-                                style: const TextStyle(
-                                  fontSize: 12,
-                                  color: Colors.grey,
-                                ),
-                                maxLines: 1,
-                                overflow: TextOverflow.ellipsis,
-                              ),
-                            ),
-                            const Spacer(),
-                            Padding(
-                              padding: const EdgeInsets.all(8.0),
-                              child: Row(
-                                children: [
-                                  const Icon(
-                                    Icons.star,
-                                    size: 16,
-                                    color: Colors.amber,
+                              Expanded(
+                                child: Padding(
+                                  padding: const EdgeInsets.all(12.0),
+                                  child: Column(
+                                    crossAxisAlignment:
+                                        CrossAxisAlignment.start,
+                                    children: [
+                                      Text(
+                                        anime.titleJapanese ?? '',
+                                        style: const TextStyle(
+                                          fontFamily: 'Gilroy',
+                                          fontSize: 16,
+                                          color: Colors.white,
+                                        ),
+                                        // maxLines: 2,
+                                        // overflow: TextOverflow.ellipsis,
+                                      ),
+                                      const SizedBox(height: 4),
+                                      Text(
+                                        anime.titleEnglish ?? '',
+                                        style: const TextStyle(
+                                          fontSize: 14,
+                                          color: Colors.grey,
+                                        ),
+                                        maxLines: 1,
+                                        overflow: TextOverflow.ellipsis,
+                                      ),
+                                      SizedBox(height: 24),
+                                      // Spacer(),
+                                      Row(
+                                        children: [
+                                          const Icon(
+                                            Icons.star,
+                                            size: 16,
+                                            color: Colors.amber,
+                                          ),
+                                          const SizedBox(width: 4),
+                                          Text(
+                                            anime.score?.toStringAsFixed(1) ??
+                                                'N/A',
+                                            style: const TextStyle(
+                                              fontSize: 14,
+                                              color: Colors.white,
+                                            ),
+                                          ),
+                                        ],
+                                      ),
+                                    ],
                                   ),
-                                  const SizedBox(width: 4),
-                                  Text(
-                                    anime.score?.toStringAsFixed(1) ?? 'N/A',
-                                    style: const TextStyle(
-                                      fontSize: 12,
-                                      color: Colors.white,
-                                    ),
-                                  ),
-                                ],
+                                ),
                               ),
-                            ),
-                          ],
+                            ],
+                          ),
                         ),
                       );
                     },
