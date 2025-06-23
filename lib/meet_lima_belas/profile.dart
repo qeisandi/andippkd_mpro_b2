@@ -1,5 +1,6 @@
 import 'package:andippkd_mpro_b2/meet_lima_belas/Helper/Api/api_2.dart';
 import 'package:andippkd_mpro_b2/meet_lima_belas/Helper/model/model_profile.dart';
+import 'package:andippkd_mpro_b2/meet_lima_belas/dashboard.dart';
 import 'package:flutter/material.dart';
 
 class ProfileLimaBelas extends StatefulWidget {
@@ -18,7 +19,11 @@ class _ProfileLimaBelasState extends State<ProfileLimaBelas> {
     return Scaffold(
       appBar: AppBar(
         leading: IconButton(
-          onPressed: () => Navigator.pop(context),
+          onPressed:
+              () => Navigator.pushReplacement(
+                context,
+                MaterialPageRoute(builder: (context) => HomeScreen()),
+              ),
           icon: Icon(Icons.keyboard_arrow_left_sharp),
           color: Colors.white,
         ),

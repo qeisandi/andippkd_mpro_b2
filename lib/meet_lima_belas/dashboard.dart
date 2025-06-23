@@ -57,6 +57,7 @@ class _HomeScreenState extends State<HomeScreen> {
                         '${User.name}',
                         style: TextStyle(fontFamily: 'Gilroy', fontSize: 16),
                       ),
+                      SizedBox(height: 24),
                       ListTile(
                         leading: Icon(Icons.manage_accounts_sharp),
                         title: Text('Profile'),
