@@ -1,4 +1,6 @@
 import 'package:andippkd_mpro_b2/meet_lima_belas/Helper/Api/api_2.dart';
+import 'package:andippkd_mpro_b2/meet_lima_belas/Helper/shared/shred.dart';
+import 'package:andippkd_mpro_b2/meet_lima_belas/dashboard.dart';
 import 'package:flutter/material.dart';
 
 class SignInPage extends StatefulWidget {
@@ -13,7 +15,7 @@ class _SignInPageState extends State<SignInPage> {
   final _emailController = TextEditingController();
   final _passwordController = TextEditingController();
   bool _hidden = true;
-  final UserServis UerServis = UserServis();
+  final UserServis userServis = UserServis();
   bool isloading = false;
 
   final primaryColor = Colors.deepOrange;
@@ -30,15 +32,17 @@ class _SignInPageState extends State<SignInPage> {
       email: _emailController.text,
       password: _passwordController.text,
     );
-
+    print("Respon dari API: $res");
     if (res["data"] != null) {
+      final token = res['data']['token'];
+      await SharedPref.saveToken(token);
       ScaffoldMessenger.of(context).showSnackBar(
         SnackBar(
           content: Text('Berhasil Registrasi!'),
           backgroundColor: Colors.green,
         ),
       );
-      Navigator.pop(context);
+      Navigator.pushNamed(context, HomeScreen.id);
     } else if (res["errors"] != null) {
       ScaffoldMessenger.of(context).showSnackBar(
         SnackBar(
@@ -109,7 +113,7 @@ class _SignInPageState extends State<SignInPage> {
                     isloading
                         ? CircularProgressIndicator(color: Colors.white)
                         : Text(
-                          'Register',
+                          'Login',
                           style: TextStyle(
                             fontFamily: 'Gilroy',
                             color: Colors.white,

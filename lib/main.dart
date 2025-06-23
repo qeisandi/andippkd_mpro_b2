@@ -9,7 +9,9 @@
 // import 'package:andippkd_mpro_b2/meet_enam/tugas_enam_flutter.dart';
 // import 'package:andippkd_mpro_b2/meet_sepuluh/tugas_sepuluh_flutter.dart';
 // import 'package:andippkd_mpro_b2/meet_delapan/tugas_delapan_flutter.dart';
+import 'package:andippkd_mpro_b2/meet_lima_belas/dashboard.dart';
 import 'package:andippkd_mpro_b2/meet_lima_belas/login.dart';
+import 'package:andippkd_mpro_b2/meet_lima_belas/profile.dart';
 import 'package:andippkd_mpro_b2/meet_lima_belas/register.dart';
 import 'package:andippkd_mpro_b2/meet_sebelas/login_screen.dart';
 import 'package:andippkd_mpro_b2/meet_sebelas/register_screen.dart';
@@ -38,6 +40,8 @@ class MyApp extends StatelessWidget {
         '/Splash': (context) => Splash(),
         LoginScreen.id: (context) => LoginScreen(),
         RegisterScreen.id: (context) => RegisterScreen(),
+        ProfileLimaBelas.id: (context) => ProfileLimaBelas(),
+        HomeScreen.id: (context) => HomeScreen(),
         '/register': (context) => RegisLimaBelas(), // halaman register kamu
         '/signin': (context) => SignInPage(), // halaman login ini
       },
@@ -57,9 +61,7 @@ class MyApp extends StatelessWidget {
         //
         // This works for code too, not just values: Most code changes can be
         // tested with just a hot reload.
-        colorScheme: ColorScheme.fromSeed(
-          seedColor: const Color.fromARGB(255, 114, 198, 231),
-        ),
+        colorScheme: ColorScheme.fromSeed(seedColor: Colors.white),
       ),
       // home: const SplashScreen(),
     );

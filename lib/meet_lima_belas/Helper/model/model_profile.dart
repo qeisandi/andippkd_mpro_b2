@@ -1,43 +1,29 @@
 // To parse this JSON data, do
 //
-//     final loginResponse = loginResponseFromJson(jsonString);
+//     final getProfile = getProfileFromJson(jsonString);
 
 import 'dart:convert';
 
-LoginResponse loginResponseFromJson(String str) =>
-    LoginResponse.fromJson(json.decode(str));
+GetProfile getProfileFromJson(String str) =>
+    GetProfile.fromJson(json.decode(str));
 
-String loginResponseToJson(LoginResponse data) => json.encode(data.toJson());
+String getProfileToJson(GetProfile data) => json.encode(data.toJson());
 
-class LoginResponse {
+class GetProfile {
   String? message;
-  Data? data;
+  Profile? data;
 
-  LoginResponse({this.message, this.data});
+  GetProfile({this.message, this.data});
 
-  factory LoginResponse.fromJson(Map<String, dynamic> json) => LoginResponse(
+  factory GetProfile.fromJson(Map<String, dynamic> json) => GetProfile(
     message: json["message"],
-    data: json["data"] == null ? null : Data.fromJson(json["data"]),
+    data: json["data"] == null ? null : Profile.fromJson(json["data"]),
   );
 
   Map<String, dynamic> toJson() => {"message": message, "data": data?.toJson()};
 }
 
-class Data {
-  String? token;
-  User? user;
-
-  Data({this.token, this.user});
-
-  factory Data.fromJson(Map<String, dynamic> json) => Data(
-    token: json["token"],
-    user: json["user"] == null ? null : User.fromJson(json["user"]),
-  );
-
-  Map<String, dynamic> toJson() => {"token": token, "user": user?.toJson()};
-}
-
-class User {
+class Profile {
   int? id;
   String? name;
   String? email;
@@ -45,7 +31,7 @@ class User {
   DateTime? createdAt;
   DateTime? updatedAt;
 
-  User({
+  Profile({
     this.id,
     this.name,
     this.email,
@@ -54,7 +40,7 @@ class User {
     this.updatedAt,
   });
 
-  factory User.fromJson(Map<String, dynamic> json) => User(
+  factory Profile.fromJson(Map<String, dynamic> json) => Profile(
     id: json["id"],
     name: json["name"],
     email: json["email"],
