@@ -9,6 +9,7 @@
 // import 'package:andippkd_mpro_b2/meet_enam/tugas_enam_flutter.dart';
 // import 'package:andippkd_mpro_b2/meet_sepuluh/tugas_sepuluh_flutter.dart';
 // import 'package:andippkd_mpro_b2/meet_delapan/tugas_delapan_flutter.dart';
+import 'package:andippkd_mpro_b2/meet_lima_belas/login.dart';
 import 'package:andippkd_mpro_b2/meet_lima_belas/register.dart';
 import 'package:andippkd_mpro_b2/meet_sebelas/login_screen.dart';
 import 'package:andippkd_mpro_b2/meet_sebelas/register_screen.dart';
@@ -33,10 +34,12 @@ class MyApp extends StatelessWidget {
       title: 'Flutter Demo',
       initialRoute: '/',
       routes: {
-        '/': (context) => TugasLimaBelas(),
+        '/': (context) => SignInPage(),
         '/Splash': (context) => Splash(),
         LoginScreen.id: (context) => LoginScreen(),
         RegisterScreen.id: (context) => RegisterScreen(),
+        '/register': (context) => RegisLimaBelas(), // halaman register kamu
+        '/signin': (context) => SignInPage(), // halaman login ini
       },
       theme: ThemeData(
         // This is the theme of your application.

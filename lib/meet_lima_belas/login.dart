@@ -1,35 +1,33 @@
 import 'package:andippkd_mpro_b2/meet_lima_belas/Helper/Api/api_2.dart';
 import 'package:flutter/material.dart';
 
-class RegisLimaBelas extends StatefulWidget {
-  const RegisLimaBelas({super.key});
+class SignInPage extends StatefulWidget {
+  const SignInPage({super.key});
 
   @override
-  State<RegisLimaBelas> createState() => _RegisLimaBelasState();
+  State<SignInPage> createState() => _SignInPageState();
 }
 
-class _RegisLimaBelasState extends State<RegisLimaBelas> {
+class _SignInPageState extends State<SignInPage> {
   final _formKey = GlobalKey<FormState>();
-  final _namaLengkapController = TextEditingController();
   final _emailController = TextEditingController();
   final _passwordController = TextEditingController();
   bool _hidden = true;
-  bool _loading = false;
   final UserServis UerServis = UserServis();
+  bool isloading = false;
 
   final primaryColor = Colors.deepOrange;
   final backgroundColor = Color(0xFFF5F5F5);
   final inputFillColor = Colors.white;
   final borderRadius = 30.0;
 
-  void register() async {
+  void login() async {
     setState(() {
-      _loading = true;
+      isloading = true;
     });
 
-    final res = await UserServis().regisUser(
+    final res = await UserServis().loginUser(
       email: _emailController.text,
-      name: _namaLengkapController.text,
       password: _passwordController.text,
     );
 
@@ -51,7 +49,7 @@ class _RegisLimaBelasState extends State<RegisLimaBelas> {
     }
 
     setState(() {
-      _loading = false;
+      isloading = false;
     });
   }
 
@@ -64,7 +62,7 @@ class _RegisLimaBelasState extends State<RegisLimaBelas> {
         backgroundColor: primaryColor,
         centerTitle: true,
         title: Text(
-          'Daftar Akun',
+          'Masuk Akun',
           style: TextStyle(
             fontFamily: 'Gilroy',
             fontSize: 24,
@@ -79,21 +77,15 @@ class _RegisLimaBelasState extends State<RegisLimaBelas> {
           child: Column(
             children: [
               Text(
-                'Buat akun baru untuk mulai',
+                'Selamat datang kembali!',
                 style: TextStyle(fontSize: 18, fontWeight: FontWeight.w500),
               ),
               SizedBox(height: 24),
               _buildInputField(
-                'Nama Lengkap',
-                Icons.badge,
-                _namaLengkapController,
-              ),
-              SizedBox(height: 16),
-              _buildInputField(
                 'Email',
                 Icons.email,
                 _emailController,
-                inputType: TextInputType.emailAddress,
+                TextInputType.emailAddress,
               ),
               SizedBox(height: 16),
               _buildPasswordField(),
@@ -106,16 +98,15 @@ class _RegisLimaBelasState extends State<RegisLimaBelas> {
                     borderRadius: BorderRadius.circular(borderRadius),
                   ),
                 ),
-                onPressed: () {
+                onPressed: () async {
                   if (_formKey.currentState!.validate()) {
                     print('Email: ${_emailController.text}');
-                    print('Nama: ${_namaLengkapController.text}');
                     print('Password: ${_passwordController.text}');
-                    register();
+                    login();
                   }
                 },
                 child:
-                    _loading
+                    isloading
                         ? CircularProgressIndicator(color: Colors.white)
                         : Text(
                           'Register',
@@ -128,10 +119,10 @@ class _RegisLimaBelasState extends State<RegisLimaBelas> {
               SizedBox(height: 16),
               TextButton(
                 onPressed: () {
-                  Navigator.pushNamed(context, '/signin');
+                  Navigator.pushNamed(context, '/register');
                 },
                 child: Text(
-                  'Sudah punya akun? Masuk di sini',
+                  'Belum punya akun? Daftar di sini',
                   style: TextStyle(
                     color: primaryColor,
                     fontWeight: FontWeight.bold,
@@ -148,9 +139,9 @@ class _RegisLimaBelasState extends State<RegisLimaBelas> {
   Widget _buildInputField(
     String label,
     IconData icon,
-    TextEditingController controller, {
-    TextInputType inputType = TextInputType.text,
-  }) {
+    TextEditingController controller,
+    TextInputType inputType,
+  ) {
     return TextFormField(
       controller: controller,
       keyboardType: inputType,
