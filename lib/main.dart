@@ -1,14 +1,3 @@
-// import 'package:andippkd_mpro_b2/meet_enam/tugas_enam_flutter.dart';
-// import 'package:andippkd_mpro_b2/input_widget/input_widget.dart';
-// import 'package:andippkd_mpro_b2/meet_delapan/tugas_delapan_flutter.dart';
-// import 'package:andippkd_mpro_b2/meet_sembilan/tugas_sembilan_c.dart';
-// import 'package:andippkd_mpro_b2/meet_sembilan/tugas_sembilan_b.dart';
-// import 'package:andippkd_mpro_b2/meet_sembilan/tugas_sembilan_flutter.dart';
-// import 'package:andippkd_mpro_b2/meet_tujuh/tugas_tujuh_flutter.dart';
-// import 'package:andippkd_mpro_b2/splash_screen/splash.dart';
-// import 'package:andippkd_mpro_b2/meet_enam/tugas_enam_flutter.dart';
-// import 'package:andippkd_mpro_b2/meet_sepuluh/tugas_sepuluh_flutter.dart';
-// import 'package:andippkd_mpro_b2/meet_delapan/tugas_delapan_flutter.dart';
 import 'package:andippkd_mpro_b2/meet_lima_belas/dashboard.dart';
 import 'package:andippkd_mpro_b2/meet_lima_belas/login.dart';
 import 'package:andippkd_mpro_b2/meet_lima_belas/profile.dart';
@@ -16,9 +5,6 @@ import 'package:andippkd_mpro_b2/meet_lima_belas/register.dart';
 import 'package:andippkd_mpro_b2/meet_sebelas/login_screen.dart';
 import 'package:andippkd_mpro_b2/meet_sebelas/register_screen.dart';
 import 'package:andippkd_mpro_b2/splash_screen/splash.dart';
-// import 'package:andippkd_mpro_b2/view/user_list_screen.dart';
-// import 'package:andippkd_mpro_b2/study_case/uiSiswa.dart';
-// import 'package:andippkd_mpro_b2/tugas_sebelas/tugas_sebelas.dart';
 import 'package:flutter/material.dart';
 
 void main() {
